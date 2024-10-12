@@ -1,0 +1,7 @@
+name: "First action"
+description: "Add a label when a new PR is opened"
+author: "Mar"
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
