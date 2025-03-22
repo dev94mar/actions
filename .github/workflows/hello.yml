@@ -1,11 +1,14 @@
 name: "Hello"
 
-on:
-  workflow_dispatch:
+on: ['push']
 
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./
+      - name: "group logging"
+        run: |
+            echo "::group::My group message"
+            echo "Msg 1"
+            echo "Msg 2"
+            echo "::endgroup::"
