@@ -8,7 +8,8 @@ jobs:
     steps:
       - name: "group logging"
         run: |
-            echo "::group::My group message"
-            echo "Msg 1"
-            echo "Msg 2"
-            echo "::endgroup::"
+            echo "Action! $MY_ACTION"
+            echo "Action! $MY_ACTOR"
+        env:
+          MY_ACTION: ${{ github.action }}
+          MY_ACTOR: ${{ github.actor }}
